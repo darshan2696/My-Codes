@@ -1,6 +1,7 @@
 # A FUNCTION THAT EXPORTS GRAPHS
 #----------------------------------
 
+View(cars)
 
 Graphs <- function(data,var= 1:ncol(data), direct= "",tresh=10)                     #feed your working directry path into direct 
 {
@@ -43,6 +44,21 @@ Graphs <- function(data,var= 1:ncol(data), direct= "",tresh=10)                 
   }
 }
 
+#Explanation:
+#-------------
+
+par(mfrow=c(2,1))  
+boxplot(cars[,2], main = paste("Boxplot of", names(data)[2]),                 #boxplot
+        ylab = names(data)[2], col = "maroon", border = "grey5",
+        horizontal = T)
+
+hist(cars[,2], main = paste("Histogram of", names(data)[2]),                  #histogram
+     xlab = names(data)[2], ylab = "No. of Houses", col = "lightgreen", border=F)
+
+
+
+
+Graphs(cars,direct="C:\\Users\\ethic\\Desktop\\test")
 
 #example:
 #Graphs(cars,c(1,3,5,10,11))
